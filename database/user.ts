@@ -8,12 +8,12 @@ import { DbEntry, Identifiable, Timestamps } from './abstract';
 export interface UserPublicFields extends DbEntry {
   display_name?: string;
   pfp_url?: string;
+  first_day?: string;
 }
 
 export interface UserExposedFields extends UserPublicFields {
   private: boolean;
   tz: string;
-  first_day?: string;
   daily_notification_time?: string; // hh:mm
   persistent_daily_notification?: boolean;
   event_notifications_enabled?: boolean;

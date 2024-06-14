@@ -1,6 +1,6 @@
 import { ItemDbObject } from './database/items';
 import { ItemUserRelations } from './database/items_on_users';
-import { PublicUser } from './user';
+import { PublicUser, UserRelatedItem } from './user';
 
 export interface ItemRelatedUser extends PublicUser, ItemUserRelations {}
 export interface ItemRelatedItem extends Item {}
@@ -14,4 +14,9 @@ export interface ItemRelations {
 
 export interface Item extends ItemDbObject {
   relations: Partial<ItemRelations>;
+}
+
+// Used by the frontend to create standing copies of template items
+export interface LocalItem extends UserRelatedItem {
+  localised: boolean
 }
