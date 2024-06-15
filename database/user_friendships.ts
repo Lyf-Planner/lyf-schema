@@ -29,6 +29,9 @@ export enum UserFriendshipStatus {
   PendingFirstAcceptance = 'Pending First',
   PendingSecondAcceptance = 'Pending Second',
   Friends = 'Friends',
+  PendingFirstBFFAcceptance = 'Pending BFF First',
+  PendingSecondBFFAcceptance = 'Pending BFF Second',
+  BFF = 'Best Friends',
   BlockedByFirst = 'Blocked By First',
   BlockedBySecond = 'Blocked By Second',
   MutualBlock = 'Mutually Blocked'

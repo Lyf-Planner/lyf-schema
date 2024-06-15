@@ -16,12 +16,13 @@ export interface ItemDbObject extends DbEntry {
   // Provides a huge optimisation timetable queries and massively reduces data for notes.
   collaborative: boolean;
 
+  note_id?: ID;
+  template_id?: ID;
   date?: string; // yyyy-mm-dd
   day?: string;
   desc?: string;
   time?: string; // hh:mm
   end_time?: string; // hh:mm
-  template_id?: ID;
   url?: string;
   location?: string;
   show_in_upcoming?: boolean;
