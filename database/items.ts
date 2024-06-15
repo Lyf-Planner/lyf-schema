@@ -1,4 +1,4 @@
-import { DayOfWeek, TimeString, YearString } from 'schema/util/dates';
+import { DayOfWeek, TimeString, DateString } from '../util/dates';
 import { DbEntry, ID } from './abstract';
 
 // Notes:
@@ -19,7 +19,7 @@ export interface ItemDbObject extends DbEntry {
 
   note_id?: ID;
   template_id?: ID;
-  date?: YearString; // yyyy-mm-dd
+  date?: DateString; // yyyy-mm-dd
   day?: DayOfWeek;
   desc?: string;
   time?: TimeString; // hh:mm
