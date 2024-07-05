@@ -8,7 +8,7 @@ export enum DayOfWeek {
   Sunday = 'Sunday',
 }
 
-export const WeekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as readonly string[];
+export const WeekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] as readonly DayOfWeek[];
 
 export type TimeString = string; // "hh:mm"
 

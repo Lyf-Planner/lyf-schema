@@ -1,5 +1,6 @@
 import { ID } from "schema/database/abstract";
 import { UserFriendshipDbObject, UserFriendshipStatus } from "../database/user_friendships";
+import { UserFriend } from "schema/user";
 
 export enum SocialAction {
   Invite = 'Invite',
@@ -19,37 +20,57 @@ export enum FriendshipAction {
   Unblock = 'Unblock'
 }
 
-const hasIncomingRequest = (user_id: ID, friendship: UserFriendshipDbObject) => {
+export const hasIncomingRequest = (user_id: ID, friend: UserFriend) => {
+  const [user1_id, user2_id] = sortFriendIds(user_id, friend.id)
+
   return (
-    friendship.user1_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingFirstAcceptance ||
-    friendship.user2_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingSecondAcceptance
+    user1_id === user_id && friend.status === UserFriendshipStatus.PendingFirstAcceptance ||
+    user2_id === user_id && friend.status === UserFriendshipStatus.PendingSecondAcceptance
   )
 }
 
-const hasOutgoingRequest = (user_id: ID, friendship: UserFriendshipDbObject) => {
+export const hasOutgoingRequest = (user_id: ID, friend: UserFriend) => {
+  const [user1_id, user2_id] = sortFriendIds(user_id, friend.id)
+
   return (
-    friendship.user1_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingSecondAcceptance ||
-    friendship.user2_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingFirstAcceptance
+    user1_id === user_id && friend.status === UserFriendshipStatus.PendingSecondAcceptance ||
+    user2_id === user_id && friend.status === UserFriendshipStatus.PendingFirstAcceptance
   )
 }
 
-const hasIncomingBFFRequest = (user_id: ID, friendship: UserFriendshipDbObject) => {
+export const hasIncomingBFFRequest = (user_id: ID, friend: UserFriend) => {
+  const [user1_id, user2_id] = sortFriendIds(user_id, friend.id)
+
   return (
-    friendship.user1_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingFirstBFFAcceptance ||
-    friendship.user2_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingSecondBFFAcceptance
+    user1_id === user_id && friend.status === UserFriendshipStatus.PendingFirstBFFAcceptance ||
+    user2_id === user_id && friend.status === UserFriendshipStatus.PendingSecondBFFAcceptance
   )
 }
 
-const hasOutgoingBFFRequest = (user_id: ID, friendship: UserFriendshipDbObject) => {
+export const hasOutgoingBFFRequest = (user_id: ID, friend: UserFriend) => {
+  const [user1_id, user2_id] = sortFriendIds(user_id, friend.id)
+
   return (
-    friendship.user1_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingSecondBFFAcceptance ||
-    friendship.user2_id_fk === user_id && friendship.status === UserFriendshipStatus.PendingFirstBFFAcceptance
+    user1_id === user_id && friend.status === UserFriendshipStatus.PendingSecondBFFAcceptance ||
+    user2_id === user_id && friend.status === UserFriendshipStatus.PendingFirstBFFAcceptance
   )
 }
 
-const hasFriendship = (friendship: UserFriendshipDbObject) => {
+export const hasFriendship = (friend: UserFriend) => {
   return (
-    friendship.status === UserFriendshipStatus.Friends ||
-    friendship.status === UserFriendshipStatus.BFF
+    friend.status === UserFriendshipStatus.Friends ||
+    friend.status === UserFriendshipStatus.BFF
   );
+}
+
+export const hasBlock = (friend: UserFriend) => {
+  return (
+    friend.status === UserFriendshipStatus.BlockedByFirst ||
+    friend.status === UserFriendshipStatus.BlockedBySecond ||
+    friend.status === UserFriendshipStatus.MutualBlock
+  )
+}
+
+export const sortFriendIds = (user1_id: ID, user2_id: ID) => {
+  return [user1_id, user2_id].sort();
 }
