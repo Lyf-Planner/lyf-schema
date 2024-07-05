@@ -7,6 +7,7 @@ import { DbEntry } from './abstract';
 export interface NoteDbObject extends DbEntry {
   title: string;
   type: NoteType;
+  collaborative: boolean;
   content?: string;
 }
 
