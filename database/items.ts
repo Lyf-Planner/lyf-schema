@@ -20,7 +20,7 @@ export interface ItemDbObject extends DbEntry {
   note_id?: ID;
   template_id?: ID;
   date?: DateString; // yyyy-mm-dd
-  day?: DayOfWeek;
+  day?: string;
   desc?: string;
   time?: TimeString; // hh:mm
   end_time?: TimeString; // hh:mm
