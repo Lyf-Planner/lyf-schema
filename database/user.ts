@@ -4,6 +4,7 @@ import { DbEntry, Identifiable, Timestamps } from './abstract';
 // - primary key: id
 // - id has limit of 30 chars
 // - display_name has limit of 30 chars
+// - first day is a date string, 10 chars
 
 export interface UserPublicFields extends DbEntry {
   display_name?: string;
@@ -16,8 +17,7 @@ export interface UserExposedFields extends UserPublicFields {
   tz: string;
   daily_notification_time?: string; // hh:mm
   persistent_daily_notification?: boolean;
-  event_notifications_enabled?: boolean;
-  event_notification_minutes_before?: number;
+  event_notification_mins?: number;
 }
 
 export interface UserSensitiveFields {

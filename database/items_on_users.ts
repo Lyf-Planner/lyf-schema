@@ -17,7 +17,7 @@ export interface ItemUserRelations {
   permission: Permission;
   sorting_rank: number;
   show_in_upcoming?: boolean;
-  notification_mins_before?: number;
+  notification_mins?: number;
 }
 
 export interface ItemUserRelationshipDbObject

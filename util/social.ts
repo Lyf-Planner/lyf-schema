@@ -1,6 +1,6 @@
-import { ID } from "schema/database/abstract";
-import { UserFriendshipDbObject, UserFriendshipStatus } from "../database/user_friendships";
-import { UserFriend } from "schema/user";
+import { ID } from "../database/abstract";
+import { UserFriendshipStatus } from "../database/user_friendships";
+import { UserFriend } from "../user";
 
 export enum SocialAction {
   Invite = 'Invite',

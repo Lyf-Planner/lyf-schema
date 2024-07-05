@@ -5,7 +5,7 @@ import { DbEntry, ID } from './abstract';
 // - primary key: id
 // - foreign key: template_id (items.id)
 // - title has limit of 80 chars
-// - date is indexed (desc)
+// - date is indexed (desc) and has 10 chars
 
 export interface ItemDbObject extends DbEntry {
   title: string;
@@ -17,8 +17,10 @@ export interface ItemDbObject extends DbEntry {
   // Provides a huge optimisation timetable queries and massively reduces data for notes.
   collaborative: boolean;
 
+  // References
   note_id?: ID;
   template_id?: ID;
+
   date?: DateString; // yyyy-mm-dd
   day?: string;
   desc?: string;
@@ -26,8 +28,11 @@ export interface ItemDbObject extends DbEntry {
   end_time?: TimeString; // hh:mm
   url?: string;
   location?: string;
-  show_in_upcoming?: boolean;
-  notification_mins_before?: number;
+
+  // Fields with user preference overrides in User-Item relation
+  default_sorting_rank?: number;
+  default_show_in_upcoming?: boolean;
+  default_notification_mins?: number;
 }
 
 export interface ItemSensitiveFields {}
