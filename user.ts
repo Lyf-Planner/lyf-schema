@@ -5,7 +5,11 @@ import { UserFriendshipRelations } from './database/user_friendships';
 import { Item } from './items';
 import { Note } from './notes';
 
-export interface UserFriend extends UserPublicFields, UserFriendshipRelations {}
+export interface UserFriend extends UserPublicFields, UserFriendshipRelations {
+  relations?: {
+    users: UserFriend[];
+  }
+}
 export interface UserRelatedItem extends Item, ItemUserRelations {}
 export interface UserRelatedNote extends Note, NoteUserRelations {}
 export interface UserNotification extends Notification {}
