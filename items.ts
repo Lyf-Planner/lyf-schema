@@ -3,13 +3,13 @@ import { ItemUserRelations } from './database/items_on_users';
 import { PublicUser, UserRelatedItem } from './user';
 
 export interface ItemRelatedUser extends PublicUser, ItemUserRelations {}
-export interface ItemRelatedItem extends Item {}
+export interface TemplateItem extends Item {}
 
-export type ItemRelatedEntity = ItemRelatedUser | ItemRelatedItem;
+export type ItemRelatedEntity = ItemRelatedUser | TemplateItem;
 
 export interface ItemRelations {
   users: ItemRelatedUser[];
-  items: ItemRelatedItem; // if template_id present
+  items: TemplateItem; // if template_id present
 }
 
 export interface Item extends ItemDbObject {

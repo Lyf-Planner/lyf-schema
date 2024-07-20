@@ -8,6 +8,7 @@ import { Note } from './notes';
 export interface UserFriend extends UserPublicFields, UserFriendshipRelations {}
 export interface UserRelatedItem extends Item, ItemUserRelations {}
 export interface UserRelatedNote extends Note, NoteUserRelations {}
+export interface UserNotification extends Notification {}
 
 export type UserRelatedEntity = UserFriend | UserRelatedItem | UserRelatedNote;
 
@@ -15,6 +16,7 @@ export interface UserRelations {
   users: UserFriend[];
   items: UserRelatedItem[];
   notes: UserRelatedNote[];
+  notifications: UserNotification[];
 }
 
 export interface User extends UserDbObject {
