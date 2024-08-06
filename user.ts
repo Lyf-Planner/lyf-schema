@@ -7,7 +7,7 @@ import { Note } from './notes';
 
 export interface UserFriend extends UserPublicFields, UserFriendshipRelations {
   relations?: {
-    users: UserFriend[];
+    users?: UserFriend[];
   }
 }
 export interface UserRelatedItem extends Item, ItemUserRelations {}

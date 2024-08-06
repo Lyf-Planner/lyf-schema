@@ -19,7 +19,7 @@ export interface UserExposedFields extends UserPublicFields {
   persistent_daily_notification?: boolean;
   private: boolean;
   tz: string;
-  weather_data?: string;
+  weather_data?: boolean;
 }
 
 export interface UserSensitiveFields {

@@ -1,3 +1,8 @@
+export type Coordinates = {
+  lat: number,
+  lon: number
+}
+
 export type OneCallResponse = {
   lat: number
   lon: number
