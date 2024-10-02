@@ -8,19 +8,19 @@ import { DbEntry } from './abstract';
 // - first day is a date string, 10 chars
 
 export interface UserPublicFields extends DbEntry {
-  display_name?: string;
-  first_day?: DateString;
-  pfp_url?: string;
+  display_name: string | undefined;
+  pfp_url: string | undefined;
 }
 
 export interface UserExposedFields extends UserPublicFields {
-  daily_notification_time?: string; // hh:mm
-  event_notification_mins?: number;
-  persistent_daily_notification?: boolean;
+  daily_notification_time: string | undefined; // hh:mm
+  event_notification_mins: number | undefined;
+  persistent_daily_notification: boolean | undefined;
+  first_day: DateString | undefined;
   private: boolean;
   tz: string;
-  weather_data?: boolean;
-  auto_day_finishing?: boolean;
+  weather_data: boolean | undefined;
+  auto_day_finishing: boolean | undefined;
 }
 
 export interface UserSensitiveFields {

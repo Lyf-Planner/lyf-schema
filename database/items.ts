@@ -18,16 +18,16 @@ export interface ItemDbObject extends DbEntry {
   collaborative: boolean;
 
   // References
-  note_id?: ID;
-  template_id?: ID;
+  note_id: ID | undefined;
+  template_id: ID | undefined;
 
-  date?: DateString; // yyyy-mm-dd
-  day?: string;
-  desc?: string;
-  time?: TimeString; // hh:mm
-  end_time?: TimeString; // hh:mm
-  url?: string;
-  location?: string;
+  date: DateString | undefined; // yyyy-mm-dd
+  day: string | undefined;
+  desc: string | undefined;
+  time: TimeString | undefined; // hh:mm
+  end_time: TimeString | undefined; // hh:mm
+  url: string | undefined;
+  location: string | undefined;
 
   // Fields with user preference overrides in User-Item relation
   default_sorting_rank?: number;

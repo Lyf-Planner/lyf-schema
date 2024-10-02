@@ -7,7 +7,7 @@ import { DbEntry, ID } from './abstract';
 
 export interface NotificationDbObject extends DbEntry {
   to: ID;
-  from?: ID;
+  from: ID | undefined;
   title: string;
   message: string;
   type: NotificationType;

@@ -8,7 +8,7 @@ export interface NoteDbObject extends DbEntry {
   title: string;
   type: NoteType;
   collaborative: boolean;
-  content?: string;
+  content: string | undefined;
 }
 
 export interface NoteSensitiveFields {}

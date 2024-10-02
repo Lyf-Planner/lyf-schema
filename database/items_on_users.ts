@@ -16,8 +16,8 @@ export interface ItemUserRelations {
   invite_pending: boolean;
   permission: Permission;
   sorting_rank: number;
-  show_in_upcoming?: boolean;
-  notification_mins?: number;
+  show_in_upcoming: boolean | undefined;
+  notification_mins: number | undefined;
 }
 
 export interface ItemUserRelationshipDbObject
