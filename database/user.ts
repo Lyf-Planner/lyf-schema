@@ -20,6 +20,7 @@ export interface UserExposedFields extends UserPublicFields {
   private: boolean;
   tz: string;
   weather_data?: boolean;
+  auto_day_finishing?: boolean;
 }
 
 export interface UserSensitiveFields {
