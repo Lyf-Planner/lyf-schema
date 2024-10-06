@@ -3,7 +3,7 @@ import { ItemDbObject } from './items';
 import { ItemUserPrimaryKey, ItemUserRelations, ItemUserRelationshipDbObject } from './items_on_users';
 import { NoteDbObject } from './notes';
 import { NoteUserPrimaryKey, NoteUserRelations, NoteUserRelationshipDbObject } from './notes_on_users';
-import { NoticeDbObject } from './notice';
+import { NoticeDbObject } from './notices';
 import { NotificationDbObject } from './notifications';
 import { UserDbObject } from './user';
 import { UserFriendshipDbObject, UserFriendshipPrimaryKey, UserFriendshipRelations } from './user_friendships';
