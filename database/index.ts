@@ -3,6 +3,7 @@ import { ItemDbObject } from './items';
 import { ItemUserPrimaryKey, ItemUserRelations, ItemUserRelationshipDbObject } from './items_on_users';
 import { NoteDbObject } from './notes';
 import { NoteUserPrimaryKey, NoteUserRelations, NoteUserRelationshipDbObject } from './notes_on_users';
+import { NoticeDbObject } from './notice';
 import { NotificationDbObject } from './notifications';
 import { UserDbObject } from './user';
 import { UserFriendshipDbObject, UserFriendshipPrimaryKey, UserFriendshipRelations } from './user_friendships';
@@ -13,6 +14,7 @@ export interface DatabaseEntities {
   items: ItemDbObject;
   notes: NoteDbObject;
   users: UserDbObject;
+  notices: NoticeDbObject;
   notifications: NotificationDbObject;
 }
 export type DbEntityObject = DatabaseEntities[keyof DatabaseEntities];
