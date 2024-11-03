@@ -1,4 +1,4 @@
-import { DbEntry } from "./abstract";
+import { DbEntry } from './abstract';
 
 export type NoticeType = 'feature' | 'warning';
 

@@ -36,11 +36,11 @@ export type CurrentWeather = {
 }
 
 export type rain1hr = {
-  "1h": number // rain volume in mm
+  '1h': number // rain volume in mm
 }
 
 export type snow1hr = {
-  "1h": number // snow volume in mm
+  '1h': number // snow volume in mm
 }
 
 export type Weather = {
