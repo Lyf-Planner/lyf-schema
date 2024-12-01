@@ -1,4 +1,4 @@
-import { DayOfWeek, TimeString, DateString } from '../util/dates';
+import { TimeString, DateString } from '../util/dates';
 
 import { DbEntry, ID } from './abstract';
 
@@ -46,9 +46,9 @@ export enum ItemType {
 }
 
 export enum ItemStatus {
-  Cancelled = 'Cancelled',
   Tentative = 'Tentative',
   Upcoming = 'Upcoming',
   InProgress = 'In Progress',
+  Cancelled = 'Cancelled',
   Done = 'Done'
 }
