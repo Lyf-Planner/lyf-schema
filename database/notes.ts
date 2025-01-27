@@ -16,7 +16,7 @@ export interface NoteSensitiveFields {}
 // Enums
 
 export enum NoteType {
+  Folder = 'Folder',
   ListOnly = 'List Only',
-  NoteOnly = 'Note Only',
-  Multiple = 'Multiple'
+  NoteOnly = 'Note Only'
 }
