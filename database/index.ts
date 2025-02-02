@@ -33,14 +33,14 @@ export type DbObject = Database[keyof Database];
 // Supplementary types
 
 export type DbPrimaryKey = keyof (
-  Identifiable & 
-  ItemUserPrimaryKey & 
-  NoteUserPrimaryKey & 
-  UserFriendshipPrimaryKey & 
+  Identifiable &
+  ItemUserPrimaryKey &
+  NoteUserPrimaryKey &
+  UserFriendshipPrimaryKey &
   NoteChildPrimaryKey
 );
 
 export type DbRelationFields =
-  ItemUserRelations | 
-  NoteUserRelations | 
+  ItemUserRelations |
+  NoteUserRelations |
   UserFriendshipRelations;
