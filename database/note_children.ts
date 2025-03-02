@@ -14,6 +14,7 @@ export interface NoteChildPrimaryKey {
 
 export interface NoteChildRelations {
   distance: number;
+  sorting_rank: number;
 }
 
 export interface NoteChildDbObject extends NoteChildPrimaryKey, NoteChildRelations, Timestamps {}

@@ -6,11 +6,12 @@ import { UserPublicFields } from './database/user';
 import { UserRelatedNote } from './user';
 
 export interface NoteRelatedUser extends UserPublicFields, NoteUserRelations {}
-export interface ChildNote extends Note {
-  parent_id: ID
+export interface ChildNote extends UserRelatedNote {
+  parent_id: ID,
+  sorting_rank: number
 }
 
-export type NoteRelatedEntity = ItemDbObject | NoteRelatedUser;
+export type NoteRelatedEntity = ItemDbObject | NoteRelatedUser | ChildNote;
 
 export interface NoteRelations {
   users: NoteRelatedUser[];
