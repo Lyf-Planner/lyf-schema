@@ -16,6 +16,7 @@ export interface NoteUserPrimaryKey {
 export interface NoteUserRelations {
   invite_pending: boolean;
   permission: Permission;
+  sorting_rank_preference: number;
 }
 
 export interface NoteUserRelationshipDbObject

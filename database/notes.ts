@@ -9,7 +9,6 @@ export interface NoteDbObject extends DbEntry {
   type: NoteType;
   collaborative: boolean;
   content: string | undefined;
-  default_sorting_rank: number;
 }
 
 export interface NoteSensitiveFields {}
