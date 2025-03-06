@@ -4,7 +4,9 @@ import { NoteDbObject } from './database/notes';
 import { NoteUserRelations } from './database/notes_on_users';
 import { UserPublicFields } from './database/user';
 
-export interface NoteRelatedUser extends UserPublicFields, NoteUserRelations {}
+export interface NoteRelatedUser extends UserPublicFields, NoteUserRelations {
+  inherited_from: ID;
+}
 export interface ChildNote extends NoteDbObject {
   parent_id: ID,
   sorting_rank: number
