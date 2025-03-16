@@ -9,4 +9,5 @@ export interface NoticeDbObject extends DbEntry {
   content: string;
   image_url?: string;
   expiry?: string;
+  rank?: number;
 }
